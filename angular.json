@@ -116,6 +116,46 @@
           }
         }
       }
+    },
+    "ngx-breadcrumbs": {
+      "root": "projects/ngx-breadcrumbs",
+      "sourceRoot": "projects/ngx-breadcrumbs/src",
+      "projectType": "library",
+      "prefix": "nvs",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-breadcrumbs/tsconfig.lib.json",
+            "project": "projects/ngx-breadcrumbs/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ngx-breadcrumbs/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-breadcrumbs/src/test.ts",
+            "tsConfig": "projects/ngx-breadcrumbs/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-breadcrumbs/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-breadcrumbs/tsconfig.lib.json",
+              "projects/ngx-breadcrumbs/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngx-breadcrumbs-app"
