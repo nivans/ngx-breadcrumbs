@@ -1,5 +1,5 @@
 # @nivans / Angular 6 Bootstrap 4 breadcrumbs plugin
-An Angular 6 module created a breadcrumbs based on RouteModule data.
+An Angular 6 module create a breadcrumbs based on RouteModule data.
 
 ## PLUGIN IS IN PROCESS OF DEVELOPMENT
 ## Installation
