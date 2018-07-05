@@ -8,7 +8,8 @@ import { NgxBreadcrumbsService } from './ngx-breadcrumbs.service';
 @Component({
   selector: 'nvs-ngx-breadcrumbs',
   template: `
-    <nav aria-label="breadcrumb">
+    <nav aria-label="breadcrumb"
+         *ngIf="show">
       <ol class="breadcrumb">
         <li *ngFor="let breadcrumb of breadcrumbs"
             class="breadcrumb-item"
@@ -31,6 +32,7 @@ import { NgxBreadcrumbsService } from './ngx-breadcrumbs.service';
 export class NgxBreadcrumbsComponent implements OnInit {
   customCrumbs = [];
   breadcrumbs: NgxBreadcrumb[];
+  show = true;
 
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
@@ -72,6 +74,8 @@ export class NgxBreadcrumbsComponent implements OnInit {
     }
 
     delete(breadcrumbs[breadcrumbs.length - 1].url);
+    this.show = breadcrumbs[breadcrumbs.length - 1].show;
+    console.log(breadcrumbs);
     return breadcrumbs;
   }
 
@@ -80,11 +84,13 @@ export class NgxBreadcrumbsComponent implements OnInit {
   }
 
   getCrumbFromRoute(route: Route, urlPrefix = null): NgxBreadcrumb {
+    console.log(route);
     return {
       label: route.data.breadcrumb,
       url: urlPrefix ? `${urlPrefix}/${route.path}` : route.path || '/',
       component: route.component && route.component.name,
-      icon: route.data.icon
+      icon: route.data.icon,
+      show: route.data.hasOwnProperty('show') ? route.data.show : true
     };
   }
 }

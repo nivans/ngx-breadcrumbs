@@ -1,27 +1,58 @@
-# NgxBreadcrumbsApp
+# @nivans / Angular 6 Bootstrap 4 breadcrumbs plugin
+An Angular 6 module created a breadcrumbs based on RouteModule data.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
+## PLUGIN IS IN PROCESS OF DEVELOPMENT
+## Installation
+```bash
+# install via npm
+$ npm --save install @nivans/ngx-breadcrumbs
+# or install via yarn
+$ yarn add @nivans/ngx-breadcrumbs
+```
 
-## Development server
+To use this module you have to add it to the `imports` section in your `app.module.ts`. It should be lower than `RouterModule` import.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```javascript
+import { RouterModule } from '@angular/router';
+import { McBreadcrumbsModule } from 'ngx-breadcrumbs';
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes),
+    NgxBreadcrumbsModule.forRoot()
+  ],  
+})
+export class AppModule {}
+```
 
-## Code scaffolding
+Now you have to set it on the place in your global template. Usually, the best place is in `AppComponent` template.
+```javascript
+@Component({
+  selector: 'app-root',
+  template: `
+    <div class="container">
+      <mc-breadcrumbs></mc-breadcrumbs>
+      <router-outlet></router-outlet>
+    </div>`
+})
+export class AppComponent {}
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Configuration
 
-## Build
+Configuration of the breadcrumbs module is accessable in your route configuration.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```javascript
+const routes: Route[] = {
+  {
+    path: '',
+    component: HomeComponent,
+    data: {
+      breadcrumb: 'Home',
+      isHome: true,
+      icon: 'fa fa-home',
+      show: false
+    }
+  }
+};
+```
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

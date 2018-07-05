@@ -1,5 +1,5 @@
 {
-  "name": "@nvs/ngx-breadcrumbs",
+  "name": "@nivans/ngx-breadcrumbs",
   "author": {
     "name": "nivans",
     "email": "to@nivans.pro"
@@ -13,7 +13,7 @@
   ],
   "license": "MIT",
   "description": "Angular 6 Bootstrap 4 breadcrumbs plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0"

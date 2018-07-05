@@ -14,7 +14,12 @@ const appRoutes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    data: { breadcrumb: 'Home', isHome: true, icon: 'fa fa-home' },
+    data: {
+      breadcrumb: 'Home',
+      isHome: true,
+      icon: 'fa fa-home',
+      show: false
+    },
     pathMatch: 'full'
   },
   {
@@ -33,7 +38,10 @@ const appRoutes: Routes = [
       {
         path: 'child-1',
         component: Child1Component,
-        data: { breadcrumb: 'Child 1' }
+        data: {
+          breadcrumb: 'Child 1',
+          show: false
+        }
       },
       {
         path: 'child-2',

@@ -3,4 +3,5 @@ export interface NgxBreadcrumb {
   url?: string;
   icon?: string;
   component?: string;
+  show?: boolean;
 }
