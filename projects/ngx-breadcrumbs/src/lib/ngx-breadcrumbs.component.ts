@@ -75,7 +75,6 @@ export class NgxBreadcrumbsComponent implements OnInit {
 
     delete(breadcrumbs[breadcrumbs.length - 1].url);
     this.show = breadcrumbs[breadcrumbs.length - 1].show;
-    console.log(breadcrumbs);
     return breadcrumbs;
   }
 
@@ -84,7 +83,6 @@ export class NgxBreadcrumbsComponent implements OnInit {
   }
 
   getCrumbFromRoute(route: Route, urlPrefix = null): NgxBreadcrumb {
-    console.log(route);
     return {
       label: route.data.breadcrumb,
       url: urlPrefix ? `${urlPrefix}/${route.path}` : route.path || '/',
