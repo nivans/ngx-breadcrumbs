@@ -30,7 +30,7 @@ Now you have to set it on the place in your global template. Usually, the best p
   selector: 'app-root',
   template: `
     <div class="container">
-      <mc-breadcrumbs></mc-breadcrumbs>
+      <nvs-ngx-breadcrumbs></nvs-ngx-breadcrumbs>
       <router-outlet></router-outlet>
     </div>`
 })

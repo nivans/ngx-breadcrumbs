@@ -84,7 +84,7 @@ export class NgxBreadcrumbsComponent implements OnInit {
 
   getCrumbFromRoute(route: Route, urlPrefix = null): NgxBreadcrumb {
     return {
-      label: route.data.breadcrumb,
+      label: route.data && route.data.breadcrumb,
       url: urlPrefix ? `${urlPrefix}/${route.path}` : route.path || '/',
       component: route.component && route.component.name,
       icon: route.data.icon,
